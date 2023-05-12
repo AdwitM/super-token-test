@@ -5,11 +5,6 @@ import {SuperTokenBase} from "./base/SuperTokenBase.sol";
 
 contract PureSuperToken is SuperTokenBase {
 
-    /// @param factory super token factory for initialization
-	/// @param name super token name
-	/// @param symbol super token symbol
-	/// @param receiver Receiver of pre-mint
-	/// @param initialSupply Initial token supply to pre-mint
     constructor(
         address factory,
         string memory name,
