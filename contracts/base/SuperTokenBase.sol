@@ -2,15 +2,20 @@
 pragma solidity ^0.8.0;
 
 import {SuperTokenStorage} from "../base/SuperTokenStorage.sol";
-
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {ISuperToken} from "@superfluid-finance/ethereum-contracts/contracts/interfaces/superfluid/ISuperToken.sol";
 import {ISuperTokenFactory} from "@superfluid-finance/ethereum-contracts/contracts/interfaces/superfluid/ISuperTokenFactory.sol";
 
 abstract contract SuperTokenBase is SuperTokenStorage {
-    constructor(address factory, string memory name, string memory symbol) {
+    string public name;
+    string public symbol;
+    uint256 public decimals;
+
+    constructor(address factory, string memory _name, string memory _symbol) {
         ISuperTokenFactory(factory).initializeCustomSuperToken(address(this));
-        // ISuperToken(address(this)).initialize(IERC20(address(0)), 18, name, symbol);
+        name = _name;
+        symbol = _symbol;
+        decimals = 18;
     }
 
     /// @dev Gets totalSupply
