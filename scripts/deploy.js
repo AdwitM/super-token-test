@@ -5,7 +5,7 @@ async function main() {
   const PureSuperToken = await ethers.getContractFactory("PureSuperToken");
   const initialSupply = ethers.utils.parseEther("100"); 
   const pureSuperToken = await PureSuperToken.deploy(
-    "0xA25dbEa94C5824892006b30a629213E7Bf238624",
+    "0xA25dbEa94C5824892006b30a629213E7Bf238624", //fuji testnet
     "SuperToken",
     "SUP",
     "0x421B35e07B9d3Cc08f6780A01E5fEe7B8aeFD13E",

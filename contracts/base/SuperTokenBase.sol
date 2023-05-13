@@ -9,7 +9,7 @@ import {ISuperTokenFactory} from "@superfluid-finance/ethereum-contracts/contrac
 abstract contract SuperTokenBase is SuperTokenStorage {
     string public name;
     string public symbol;
-    uint256 public decimals;
+    uint8 public decimals;
 
     constructor(address factory, string memory _name, string memory _symbol) {
         ISuperTokenFactory(factory).initializeCustomSuperToken(address(this));
